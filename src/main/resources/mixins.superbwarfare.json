@@ -7,7 +7,6 @@
     "BeastMixin",
     "BlockStateMixin",
     "ClientboundSetPassengersPacketMixin",
-    "ClientLevelMixin",
     "EnchantedCountIncreaseFunctionMixin",
     "EntityMixin",
     "EntityOnGroundAccessor",
@@ -19,6 +18,7 @@
     "MobMixin",
     "PlayerMixin",
     "ProjectileUtilMixin",
+    "SbwDroneFpvGogglesMixin",
     "SteelPipeFallMixin",
     "VillagerMixin"
   ],

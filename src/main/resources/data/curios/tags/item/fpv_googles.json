@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "sbwdroneconfig:fpv_goggles",
+      "required": false
+    }
+  ]
+}
