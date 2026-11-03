@@ -1,6 +1,7 @@
 package com.atsuishio.superbwarfare.tools
 
 import com.atsuishio.superbwarfare.Mod
+import com.atsuishio.superbwarfare.compat.VehicleAmmoCompat
 import com.atsuishio.superbwarfare.data.gun.Ammo
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity
 import com.atsuishio.superbwarfare.init.ModItems
@@ -99,7 +100,7 @@ object InventoryTool {
             }
         }
 
-        return count
+        return VehicleAmmoCompat.count(handler, type, count)
     }
 
     @JvmStatic
@@ -153,7 +154,7 @@ object InventoryTool {
             if (count <= 0) break
         }
 
-        return initialCount - count
+        return VehicleAmmoCompat.consume(handler, type, initialCount, initialCount - count)
     }
 
     /**

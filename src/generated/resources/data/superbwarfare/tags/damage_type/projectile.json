@@ -16,6 +16,10 @@
       "required": false
     },
     {
+      "id": "scguns:bullet",
+      "required": false
+    },
+    {
       "id": "virtuarealcraft:rain_crystal",
       "required": false
     },

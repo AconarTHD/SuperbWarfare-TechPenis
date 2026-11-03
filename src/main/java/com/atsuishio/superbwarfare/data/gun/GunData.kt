@@ -1,6 +1,7 @@
 package com.atsuishio.superbwarfare.data.gun
 
 import com.atsuishio.superbwarfare.data.DefaultDataSupplier
+import com.atsuishio.superbwarfare.compat.MilitaryContentRules
 import com.atsuishio.superbwarfare.data.JsonPropertyModifier
 import com.atsuishio.superbwarfare.data.PMC
 import com.atsuishio.superbwarfare.data.StringOrVec3
@@ -742,7 +743,7 @@ class GunData private constructor(
      * @return `true` if weapon can fire.
      */
     fun canShoot(shooter: Entity?): Boolean {
-        return item.canShoot(this, shooter)
+        return !MilitaryContentRules.isDisabled(stack) && item.canShoot(this, shooter)
     }
 
     /** Fires projectile without entity shooter context. */

@@ -393,6 +393,14 @@ tasks.withType<JavaCompile> {
 
 tasks.processResources {
     from("COPYING", "COPYING.LESSER")
+    inputs.file("src/main/resources/techpenis/military_profile.json")
+    inputs.file("tools/prepare_military_resources.py")
+    doLast {
+        project.exec {
+            commandLine("python", project.file("tools/prepare_military_resources.py").absolutePath,
+                destinationDir.absolutePath)
+        }
+    }
 }
 
 tasks.named("createMinecraftArtifacts") {

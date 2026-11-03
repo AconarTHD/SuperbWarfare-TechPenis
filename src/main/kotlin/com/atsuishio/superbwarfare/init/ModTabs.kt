@@ -1,6 +1,7 @@
 package com.atsuishio.superbwarfare.init
 
 import com.atsuishio.superbwarfare.api.event.RegisterContainersEvent
+import com.atsuishio.superbwarfare.compat.MilitaryContentRules
 import com.atsuishio.superbwarfare.item.container.LuckyContainerBlockItem
 import com.atsuishio.superbwarfare.item.container.SmallContainerBlockItem
 import com.atsuishio.superbwarfare.item.material.BatteryItem
@@ -182,6 +183,8 @@ object ModTabs {
             tabData.accept(ModItems.SENPAI_SPAWN_EGG.get())
             tabData.accept(ModItems.STEEL_COIL_SPAWN_EGG.get())
         }
+        tabData.parentEntries.removeIf(MilitaryContentRules::isDisabled)
+        tabData.searchEntries.removeIf(MilitaryContentRules::isDisabled)
     }
 
     private fun generatePotionEffectTypes(

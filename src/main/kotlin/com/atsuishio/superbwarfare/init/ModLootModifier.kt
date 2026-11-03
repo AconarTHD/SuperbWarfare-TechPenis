@@ -1,6 +1,7 @@
 package com.atsuishio.superbwarfare.init
 
 import com.atsuishio.superbwarfare.Mod
+import com.atsuishio.superbwarfare.compat.MilitaryLootFilter
 import com.mojang.serialization.MapCodec
 import com.mojang.serialization.codecs.RecordCodecBuilder
 import it.unimi.dsi.fastutil.objects.ObjectArrayList
@@ -31,6 +32,10 @@ object ModLootModifier {
     @JvmField
     val LOOT_MODIFIER: DeferredHolder<MapCodec<out IGlobalLootModifier>, MapCodec<TargetModLootTableModifier>> =
         LOOT_MODIFIERS.register(Mod.MODID + "_loot_modifier", Supplier { TargetModLootTableModifier.CODEC })
+
+    @JvmField
+    val MILITARY_LOOT_FILTER: DeferredHolder<MapCodec<out IGlobalLootModifier>, MapCodec<MilitaryLootFilter>> =
+        LOOT_MODIFIERS.register("military_content_filter", Supplier { MilitaryLootFilter.CODEC })
 
     @SubscribeEvent
     fun register(event: FMLConstructModEvent) {

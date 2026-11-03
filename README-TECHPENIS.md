@@ -5,6 +5,37 @@ Minecraft 1.21.1 / NeoForge, upstream commit
 `c22d98c232aeb8f6150799e16387ffa09b488681` (0.8.9.2).
 Upstream authors and licensing are retained in `COPYING` and `COPYING.LESSER`.
 
+## 0.8.9.2-techpenis.3 — Scorched military profile
+
+This release is built from the complete Superb Warfare source project. Scorched
+Guns supplies infantry firearms; SBW retains vehicles, military equipment,
+explosives, RPG, Javelin and Igla. Shared vehicle gun code and registry IDs remain
+available for existing saves and addons; disabled infantry guns cannot fire.
+
+The imported server policy contains 200 blocked item IDs and the existing
+vehicle/entity exclusions. The source build disables 251 SBW recipes and prunes
+241 item-tag entries, including unavailable research blueprints. Native loot,
+creative and villager interaction handling also enforce the policy. Keep the
+pack's existing KubeJS script: it additionally handles other mods' recipes,
+recipe viewers, entity spawn restrictions, powder integration and terminal crafting.
+
+Vehicle rifle ammunition accepts Scorched standard copper and advanced rounds;
+heavy ammunition accepts Krahg rounds. One item supplies one round. Native saved
+ammo counters and boxes still work. Scorched bullets and beams use SBW vehicle
+hitboxes and route damage to the hit component using existing vehicle modifiers.
+Scorched turret projectiles can physically hit vehicles; turret targeting rules
+are unchanged. Pair this with the source-built Scorched Guns `1.5-techpenis.11`.
+
+Use JDK 21 and run the normal Gradle `jar` task, then build the Scorched project.
+Its `superbwarfare_jar` Gradle property can override the sibling source-build API
+JAR location. The .2 overlay script below is retained only to reproduce that
+historical artifact; it is not the build path for .3.
+
+The installed Drone Warfare 1.0.6 remains an external addon: its current NeoForge
+sources were not available from the author's public repository. The existing
+FPV slot adapter is retained; the new Scorched integration uses direct source
+changes and native NeoForge events.
+
 ## 0.8.9.2-techpenis.2
 
 Adds support for **SBW Drone Warfare 1.0.6** goggles

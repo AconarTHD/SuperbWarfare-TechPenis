@@ -107,6 +107,7 @@ $RECYCLE.BIN/
 *.lnk
 
 .gradle
+tools/__pycache__/
 build/*
 !build/generated/ksp/main
 !build/generated/ksp/main/**

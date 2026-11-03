@@ -2073,6 +2073,7 @@ open class VehicleEntity(pEntityType: EntityType<*>, pLevel: Level) : Entity(pEn
         this.lastDamageSource = source
         this.lastDamageStamp = level().gameTime
 
+        com.atsuishio.superbwarfare.compat.scguns.ScorchedVehicleHits.damageComponent(this, source, computedAmount)
         this.onHurt(computedAmount, source.entity, true)
 
         // 触发载具受伤进度条件

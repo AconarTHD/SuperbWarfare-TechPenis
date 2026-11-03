@@ -32,6 +32,7 @@ class ModDamageTypeTagProvider(
         )
             .addOptional(ResourceLocation.fromNamespaceAndPath("tacz", "bullet"))
             .addOptional(ResourceLocation.fromNamespaceAndPath("tacz", "bullet_void"))
+            .addOptional(ResourceLocation.fromNamespaceAndPath("scguns", "bullet"))
             .addOptional(ResourceLocation.fromNamespaceAndPath("virtuarealcraft", "rain_crystal"))
             .addOptional(ResourceLocation.fromNamespaceAndPath("virtuarealcraft", "rain_shower_butterfly"))
             .addOptional(ResourceLocation.fromNamespaceAndPath("virtuarealcraft", "sparkle_butterfly"))
@@ -73,7 +74,7 @@ class ModDamageTypeTagProvider(
             ModDamageTypes.PHOSPHORUS_FIRE,
             ModDamageTypes.CUSTOM_EXPLOSION,
             ModDamageTypes.PROJECTILE_EXPLOSION
-        )
+        ).addOptional(ResourceLocation.fromNamespaceAndPath("scguns", "bullet"))
         this.tag(ModTags.DamageTypes.SBW_GUN_FIRE_DAMAGE).add(
             ModDamageTypes.GUN_FIRE,
             ModDamageTypes.GUN_FIRE_HEADSHOT,

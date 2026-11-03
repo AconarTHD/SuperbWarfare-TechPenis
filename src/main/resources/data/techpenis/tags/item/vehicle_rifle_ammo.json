@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    { "id": "scguns:standard_copper_round", "required": false },
+    { "id": "scguns:advanced_round", "required": false }
+  ]
+}

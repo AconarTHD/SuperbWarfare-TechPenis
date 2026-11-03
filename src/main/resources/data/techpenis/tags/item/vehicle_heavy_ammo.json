@@ -1,0 +1,6 @@
+{
+  "replace": false,
+  "values": [
+    { "id": "scguns:krahg_round", "required": false }
+  ]
+}
